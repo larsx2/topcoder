@@ -1,4 +1,5 @@
 class DoubleLetter(object):
+    """ http://community.topcoder.com/stat?c=problem_statement&pm=13378 """
 
     def ableToSolve(self, s):
         if len(s) % 2 != 0:
