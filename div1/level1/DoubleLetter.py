@@ -17,7 +17,7 @@ class DoubleLetter(object):
                     break
 
         if len(s):
-        	return 'Impossible'
+            return 'Impossible'
 
         return 'Possible'
 
