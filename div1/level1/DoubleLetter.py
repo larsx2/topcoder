@@ -6,9 +6,6 @@ class DoubleLetter(object):
 
         s = list(s)
         
-        def cmp(s, j):
-            return s[j:j+2]
-
         found = True 
         while found:
             found = False
