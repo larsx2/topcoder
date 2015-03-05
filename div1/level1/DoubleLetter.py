@@ -22,6 +22,23 @@ class DoubleLetter(object):
         return 'Possible'
 
 
+    def ableToSolve2(self, s):
+        if len(s) % 2 != 0: 
+        	return 'Impossible'
+
+        l = list(s)
+        for _ in range(len(s)):
+            for i in range(len(l)-1):
+                if l[i] == l[i+1]:
+                    del l[i:i+2]
+                    break
+
+        if len(l):
+        	return 'Impossible'
+
+        return 'Possible'
+
+
 if __name__ == '__main__':
     
     double = DoubleLetter()
@@ -37,4 +54,8 @@ if __name__ == '__main__':
     ]
 
     for param in params:
-        print '"{}" = {}'.format(param, double.ableToSolve(param))
+        print ">> 1st way:"
+        print '  "{}" = {}'.format(param, double.ableToSolve(param))
+        print ">> 2nd way:"
+        print '  "{}" = {}'.format(param, double.ableToSolve2(param))
+        print
