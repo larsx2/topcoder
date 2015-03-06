@@ -7,7 +7,23 @@ class DecipherabilityEasy(object):
         return md5(a).hexdigest()
 
 
-    def check(self, s, t):
+    def usingStrSlices(self, s, t):
+        for i, _ in enumerate(s):
+            if s[:i] + s[i+1:] == t:
+            	return 'Possible'
+
+        return 'Impossible'
+
+
+    def usingStrReplace(self, s, t):
+        for i, _ in enumerate(s):
+            if s.replace(s[i], '', 1) == t:
+            	return 'Possible'
+
+        return 'Impossible'
+
+
+    def usingLists(self, s, t):
         for i, _ in enumerate(s):
             l = list(s)
             del l[i]
@@ -17,6 +33,12 @@ class DecipherabilityEasy(object):
             	return 'Possible'
 
         return 'Impossible'
+
+
+    def check(self, *args):
+        return self.usingStrReplace(*args)
+        #return self.usingLists(*args)
+        #return self.usingStrSlices(*args)
 
 
 if __name__ == '__main__':
