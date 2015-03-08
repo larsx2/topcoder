@@ -17,16 +17,12 @@ class RobotOnMoonEasy(object):
 
             if cmd == 'U': 
                 next_p[0] -= 1
-                print "U:", next_p
             elif cmd == 'D':
                 next_p[0] += 1
-                print "D:", next_p
             elif cmd == 'R': 
                 next_p[1] += 1
-                print "R:", next_p
             elif cmd == 'L':
                 next_p[1] -= 1
-                print "L:", next_p
             else:
                 raise ValueError('Invalid Command')
 
@@ -51,6 +47,7 @@ if __name__ == '__main__':
     ]
 
     for board, cmds in boards:
-    	print 
+        print "\n>> Board:"
         print "\n".join(board)
+        print "Commands:", cmds
         print robot.isSafeCommand(board, cmds)
