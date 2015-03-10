@@ -13,25 +13,25 @@ class RobotOnMoonEasy(object):
                     p = [i, j]
         
         for cmd in cmds:
-            next_p = [p[0], p[1]]
+            q = p[:]
 
             if cmd == 'U': 
-                next_p[0] -= 1
+                q[0] -= 1
             elif cmd == 'D':
-                next_p[0] += 1
+                q[0] += 1
             elif cmd == 'R': 
-                next_p[1] += 1
+                q[1] += 1
             elif cmd == 'L':
-                next_p[1] -= 1
+                q[1] -= 1
             else:
                 raise ValueError('Invalid Command')
 
-            if next_p[0] not in range(W) or next_p[1] not in range(H):
+            if q[0] not in range(W) or q[1] not in range(H):
                 return "Result: Died"
 
-            val = board[next_p[0]][next_p[1]]
+            val = board[q[0]][q[1]]
             if val == '.':
-                p = next_p[:]
+                p = q[:]
 
         return "Result: Alive"
 
