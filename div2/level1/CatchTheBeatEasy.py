@@ -1,10 +1,6 @@
 class CatchTheBeatEasy(object):
     """ Div2 250 http://community.topcoder.com/stat?c=problem_statement&pm=13208 """
 
-    def println(self, *args):
-        if self.debug:
-            print args
-
     def ableToCatchAll(self, x, y, debug=False):
         fruits = [[xf,yf] for xf, yf in sorted(zip(x,y), key=lambda k: k[1])]
         p = [0,0]
@@ -16,11 +12,11 @@ class CatchTheBeatEasy(object):
             if p[0] < q[0]:
                 p[0] += 1
             if p[0] > q[0]:
-            	p[0] -= 1
+                p[0] -= 1
         
             if q[1]-i <= 0:
                 if p[0] != q[0]:
-                	return "Not able to catch"
+                    return "Not able to catch"
 
                 j += 1
 
